@@ -5,3 +5,12 @@ insert into posts (title, body, author, created_at) values ('Novi Post', 'Lorem 
 insert into posts (title, body, author, created_at) values ('Drugi post', 'Etiam facilisis posuere dignissim. Donec elementum lorem vitae magna aliquet, nec feugiat augue faucibus. Proin commodo nec justo ac pulvinar. Phasellus id ligula nisi. Ut suscipit at odio ut suscipit. Mauris lobortis eros id quam pretium egestas. Pellentesque luctus est eros, eu scelerisque elit pharetra eget. Curabitur tincidunt vehicula leo vitae congue. Ut posuere dui ante, sed euismod nulla tincidunt ac. Phasellus sapien ante, tempor ac leo quis, finibus consectetur mi. Suspendisse potenti. Mauris in diam nec neque efficitur sollicitudin. Ut lacinia ligula eros, non egestas justo accumsan ut. ', 'Marko', '2022-11-12');
 insert into posts (title, body, author, created_at) values ('Jos jedan post', 'Nulla sollicitudin ex nec suscipit consequat. Fusce sed libero ut lorem tempus fringilla. Suspendisse libero urna, semper at lacus ac, pharetra volutpat ipsum. Aliquam et arcu lobortis, pellentesque erat eget, ultricies quam. Integer facilisis dui nisl, ut auctor dolor pulvinar sed. Sed in feugiat elit. Ut tortor velit, mattis vel molestie vel, bibendum quis nunc. ', 'Nemanja', '20203-09-07'); 
 update posts set created_at = '2023-04-04' where id=3;  
+create table comments (id int auto_increment, author varchar(50) not null, text text not null, post_id int not null, primary key(id), foreign key(post_id) references posts(id));
+insert into comments (author, text, post_id) values ('Marija', 'blablabla', 1); 
+insert into comments (author, text, post_id) values ('Marija', 'bla.', 2);
+insert into comments (author, text, post_id) values ('Vladimir', 'lol', 2);
+insert into comments (author, text, post_id) values ('Aleksa', 'gergregrefvdesefs', 2);
+insert into comments (author, text, post_id) values ('Aleksa', '!!!!!!', 3);
+insert into comments (author, text, post_id) values ('Lidija', '?????', 3);
+insert into comments (author, text, post_id) values ('Aleksandar', '...', 3);
+insert into comments (author, text, post_id) values ('Aleksandar', 'hihihi', 1);

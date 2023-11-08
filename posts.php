@@ -46,11 +46,10 @@ include "db.php";
     ?>
 
         <div class="row">
-
             <div class="col-sm-8 blog-main">
                 <?php foreach($posts as $post){ ?>
                 <div class="blog-post">
-                    <a href="single_post.php"><h2 class="blog-post-title"><?php echo $post['title']; ?></h2></a>
+                    <?php echo "<a href='single_post.php?id=" . $post['id']. "'>"?><h2 class="blog-post-title"><?php echo $post['title']; ?></h2></a>
                     <p class="blog-post-meta"><?php echo $post['created_at']; ?> by <a href="#"><?php echo $post['author']; ?></a></p>
 
                     <p> <?php echo $post['body']; ?></p>
