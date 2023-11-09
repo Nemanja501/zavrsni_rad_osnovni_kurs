@@ -31,14 +31,6 @@ include "db.php";
     $statement->setFetchMode(PDO::FETCH_ASSOC);
     
     $post = $statement->fetch();
-
-    $sql2 = "SELECT * FROM comments where comments.post_id =" . $_GET['id'];
-    $statement2 = $connection->prepare($sql2);
-    $statement2->execute();
-    
-    $statement2->setFetchMode(PDO::FETCH_ASSOC);
-    
-    $comments = $statement2->fetchAll();
     ?>
     <main role="main" class="container">
         <div class="row">
@@ -50,10 +42,7 @@ include "db.php";
 
                     <p> <?php echo $post['body']; ?></p>
                     <ul>
-                        <?php foreach($comments as $comment){
-                            echo "<li>" . $comment['text'] . "<br> by: " . $comment['author'] . "</li>"; 
-                            echo "<hr>";
-                        }?>
+                        <?php include "comments.php";?>
                     </ul>
                 </div><!-- /.blog-post -->
 

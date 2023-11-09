@@ -1,3 +1,6 @@
+<?php 
+include "db.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,9 +20,20 @@
     <link href="styles/blog.css" rel="stylesheet">
 </head>
 <body>
+    <button class="btn btn-default">Hide Comments</button>
+    <hr>
     <?php 
-    include "header.php";
-    include "sidebar.php";
-    include "footer.php";    
-    ?>
+        $sql = "SELECT * FROM comments where comments.post_id =" . $_GET['id'];
+        $statement = $connection->prepare($sql);
+        $statement->execute();
+        
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $comments = $statement->fetchAll();  
+
+        foreach($comments as $comment){
+            echo "<li class='comment'>" . $comment['text'] . "<br> by: " . $comment['author'] . "</li>"; 
+            echo "<hr>";
+        }?>
 </body>
+<script src="hide_comments.js"></script>
