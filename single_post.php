@@ -37,7 +37,7 @@ include "db.php";
 
             <div class="col-sm-8 blog-main">
                 <div class="blog-post">
-                    <a href="single_post.php"><h2 class="blog-post-title"><?php echo $post['title']; ?></h2></a>
+                    <h2 class="blog-post-title"><?php echo $post['title']; ?></h2>
                     <p class="blog-post-meta"><?php echo $post['created_at']; ?> by <a href="#"><?php echo $post['author']; ?></a></p>
 
                     <p> <?php echo $post['body']; ?></p>

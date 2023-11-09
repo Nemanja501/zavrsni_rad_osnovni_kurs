@@ -36,7 +36,7 @@ include "db.php";
     <main role="main" class="container">
 
     <?php 
-    $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 3";
+    $sql = "SELECT * FROM posts ORDER BY created_at DESC";
     $statement = $connection->prepare($sql);
     $statement->execute();
     
