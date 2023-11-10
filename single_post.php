@@ -53,6 +53,7 @@ include "db.php";
                     <ul>
                         <?php include "comments.php";?>
                     </ul>
+                    <a href="delete_post.php?id=<?php echo $post['id'];?>"><button type="submit" class="bt btn-primary">Delete this post</button></a>
                 </div><!-- /.blog-post -->
 
                 </div><!-- /.blog-main -->
