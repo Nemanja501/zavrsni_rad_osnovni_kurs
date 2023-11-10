@@ -41,6 +41,15 @@ include "db.php";
                     <p class="blog-post-meta"><?php echo $post['created_at']; ?> by <a href="#"><?php echo $post['author']; ?></a></p>
 
                     <p> <?php echo $post['body']; ?></p>
+                    <form action="create_comment.php" method="post">
+                        <label>Your name: </label><br>
+                        <input type="text" name="author" required><br><br>
+                        <label>Comment: </label><br>
+                        <input type="text" name="comment" required><br><br>
+                        <input type="hidden" name="post-id" value="<?php echo $post['id']?>">
+                        <input type="submit" name="submit" value="Submit" class="btn btn-default">
+                    </form>
+                    <br>
                     <ul>
                         <?php include "comments.php";?>
                     </ul>

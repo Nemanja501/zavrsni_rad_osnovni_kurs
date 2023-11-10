@@ -20,7 +20,7 @@ include "db.php";
     <link href="styles/blog.css" rel="stylesheet">
 </head>
 <body>
-    <button class="btn btn-default">Hide Comments</button>
+    <button class="btn btn-default" id="hide-comments-btn">Hide Comments</button>
     <hr>
     <?php 
         $sql = "SELECT * FROM comments where comments.post_id =" . $_GET['id'];
@@ -32,7 +32,8 @@ include "db.php";
         $comments = $statement->fetchAll();  
 
         foreach($comments as $comment){
-            echo "<li class='comment'>" . $comment['text'] . "<br> by: " . $comment['author'] . "</li>"; 
+            echo "<li class='comment'>" . $comment['text'] . "<br> by: " . $comment['author']; 
+            echo '<a href="delete_comment.php?id="'. $comment['id'] .'"><button class="btn btn-default" id="delete-comments-btn">Delete</button></a></li>';
             echo "<hr>";
         }?>
 </body>

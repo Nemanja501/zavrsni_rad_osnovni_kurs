@@ -31,7 +31,7 @@ include "db.php";
 <body>
     <aside class="col-sm-3 ml-sm-auto blog-sidebar">
                 <div class="sidebar-module sidebar-module-inset">
-                    <h4>About</h4>
+                    <h4>Latest Posts</h4>
                     <?php 
                         foreach($posts as $post){
                             echo "<a href='single_post.php?id=" . $post['id']. "'>" . $post['title'] . "</a>";
