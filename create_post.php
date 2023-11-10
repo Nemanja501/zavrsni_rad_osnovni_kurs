@@ -17,9 +17,31 @@
     <link href="styles/blog.css" rel="stylesheet">
 </head>
 <body>
-    <?php 
-    include "header.php";
-    include "sidebar.php";
-    include "footer.php";    
-    ?>
+<?php include "header.php"?>
+<main role="main" class="container">
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            <h1>Create new post</h1>
+            <form action="create.php" method="post">
+                <label>Title:</label><br>
+                <input type="text" name="title" required><br>
+                <label>Content:</label><br>
+                <input type="text" name="body" required><br>
+                <label>Your name:</label><br>
+                <input type="text" name="author" required><br><br>
+                <input type="submit" value="Submit" class="btn btn-default">
+            </form>
+            <br>
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+
+        </div><!-- /.blog-main -->
+        <?php include "sidebar.php"; ?>
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+<?php include "footer.php"; ?>
 </body>

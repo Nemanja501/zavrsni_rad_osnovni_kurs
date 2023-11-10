@@ -10,7 +10,7 @@ if(isset($_POST['author']) && isset($_POST['comment']) && isset($_POST['post-id'
     header("Location: single_post.php?id=" . $postID);
     
 }else{
-    echo "Error";
+    echo "Please fill out every field.";
 }
 
 
