@@ -32,8 +32,10 @@ include "db.php";
         $comments = $statement->fetchAll();  
 
         foreach($comments as $comment){
+            $commentID = $comment['id'];
+            $postID = $comment['post_id'];
             echo "<li class='comment'>" . $comment['text'] . "<br> by: " . $comment['author']; 
-            echo '<a href="delete_comment.php?id="'. $comment['id'] .'"><button class="btn btn-default" id="delete-comments-btn">Delete</button></a></li>';
+            echo "<a href='delete_comment.php?id=$commentID&post_id=$postID'><button class='btn btn-default' id='delete-comments-btn'>Delete</button></a></li>";
             echo "<hr>";
         }?>
 </body>
